@@ -26,8 +26,8 @@
 using namespace std;
 
 bool DEBUG = false;
-int row = 75;
-int grid[5625] = {};
+int row = 170;
+int grid[6460] = {};
 int times = 0;
 int x;
 int y;
@@ -47,15 +47,15 @@ void printGrid(int* grid, int size) {
   for (int i=0;i<size;i++) {
     if ((i+1) % row  == 0) {
       if (grid[i] == 0) {
-        cout << BOLDMAGENTA << grid[i] << endl;
-      } else {
         cout << BLUE << grid[i] << endl;
+      } else {
+        cout << BOLDMAGENTA << grid[i] << endl;
       }
     } else {
       if (grid[i] == 0) {
-        cout << BOLDMAGENTA << grid[i];
-      } else {
         cout << BLUE << grid[i];
+      } else {
+        cout << BOLDMAGENTA << grid[i];
       }
     }
   }
@@ -63,7 +63,7 @@ void printGrid(int* grid, int size) {
 
 void initializeGrid(int* grid, int size) {
   x = rand() % row + 2;
-  int nextState[5625] = {};
+  int nextState[6460] = {};
   for (int i=0; i<size;i++) {
     int rowIndex = row - 1;
     int sizeIndex = size - 1;
@@ -144,6 +144,7 @@ int main() {
     initializeGrid(grid, size);
     printGrid(grid, size);
     this_thread::sleep_for(chrono::milliseconds(300));
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     times++;
    }
 
