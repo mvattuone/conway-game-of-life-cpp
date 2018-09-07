@@ -61,7 +61,7 @@ void printGrid(int* grid, int size) {
   }
 }
 
-void initializeGrid(int* grid, int size) {
+void updateGrid(int* grid, int size) {
   x = rand() % row + 2;
   int nextState[6460] = {};
   for (int i=0; i<size;i++) {
@@ -141,7 +141,7 @@ int main() {
     this_thread::sleep_for(chrono::milliseconds(1000));
   }
   while (times < 20000) {
-    initializeGrid(grid, size);
+    updateGrid(grid, size);
     printGrid(grid, size);
     this_thread::sleep_for(chrono::milliseconds(300));
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
